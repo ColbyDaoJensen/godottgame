@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="13_jfda3"]
 [ext_resource type="AudioStream" uid="uid://bqaklfakq1gcl" path="res://sounds/music/ShortSampleSong.wav" id="17_muem4"]
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="17_tk810"]
+[ext_resource type="AudioStream" uid="uid://dc11j858icpa0" path="res://sounds/jumpSound.wav" id="18_yc10j"]
+[ext_resource type="AudioStream" uid="uid://d7biwgvubm6w" path="res://sounds/footstepsSound.wav" id="19_jscy8"]
+[ext_resource type="AudioStream" uid="uid://di8p4de1mbse0" path="res://sounds/deathSound.wav" id="20_pm3ni"]
+[ext_resource type="AudioStream" uid="uid://dka61knfx1ius" path="res://sounds/collectSound.wav" id="21_y6deb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jbj1t"]
 
@@ -227,8 +231,20 @@ text = "0"
 label_settings = SubResource("LabelSettings_38ys3")
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1553367677]
+[node name="ShortSampleSong" type="AudioStreamPlayer" parent="." unique_id=1553367677]
 stream = ExtResource("17_muem4")
 autoplay = true
+
+[node name="jumpSound" type="AudioStreamPlayer" parent="." unique_id=766529090]
+stream = ExtResource("18_yc10j")
+
+[node name="footstepsSound" type="AudioStreamPlayer" parent="." unique_id=1026216586]
+stream = ExtResource("19_jscy8")
+
+[node name="deathSound" type="AudioStreamPlayer" parent="." unique_id=1000504873]
+stream = ExtResource("20_pm3ni")
+
+[node name="collectSound" type="AudioStreamPlayer" parent="." unique_id=101588275]
+stream = ExtResource("21_y6deb")
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
